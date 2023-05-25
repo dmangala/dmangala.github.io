@@ -28,18 +28,8 @@ const $picto_random = () => {
 };
 
 /**
- * SKILLS
+ * Projets
  */
-
-const SkillsPictureMe = () => {
-  const $me = document.querySelector('.--me-skills img');
-  const $originUrl = 'file:///C:/Users/Cr%C3%A9a/Documents/_PROJET/portfolio/_projetGit/portfolio/img/me-thumbs.png';
-  const $gifUrl = 'file:///C:/Users/Cr%C3%A9a/Documents/_PROJET/portfolio/_projetGit/portfolio/img/me-thumbs.gif';
-
-  setTimeout(() => {
-    $me.src = $originUrl;
-  }, 3500);
-}
 
 
 
@@ -48,4 +38,12 @@ const SkillsPictureMe = () => {
   setInterval($picto_random,800);
   //SkillsPictureMe();
  // SkillsFigure();
+
+ window.addEventListener("scroll", () => {
+  if (window.scrollY > 145) {
+    document.querySelector(".table-header").classList.add("active");
+  } else {
+    document.querySelector(".table-header").classList.remove("active");
+  }
+});
 }());

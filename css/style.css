@@ -115,23 +115,47 @@ a {
       font-family: var(--font-mono) ;
   }
 }
+.card-img-top{
+  height: 225px;
+  background-repeat:no-repeat;
+  background-size:cover;
+}
+.card:hover .card-img-top{
+  height: 330px;
+  animation: imgove 0.8s linear;
+}
+.card:not( :hover ) .card-img-top{ 
+  animation: imgove-reverse 0.5s ease-in-out ;
+ }
 
+
+@keyframes imgove {
+  from {height: 225px;}
+  to {height: 325px;}
+}
+
+@keyframes imgove-reverse {
+  from {height: 325px;}
+  to {height: 225px;}
+}
 .main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+ padding:6rem;
   min-height: 100vh;
+  flex-wrap: wrap;
+}
+.main > div {
+  flex: 0 0 50%;
 }
 
 .content {
-  max-height: 700px;
   display: flex;
 }
 .content  >div {
-      flex: 0 0 50%;
-      max-width: 40%;
+    max-width: 80%;
   }
 
 
@@ -139,6 +163,10 @@ img {
   display: block;
   max-width: 100%;
   height: 100%;
+}
+
+.project-list-items {
+  margin-top: 5rem;
 }
 
 .--me img {
@@ -299,16 +327,17 @@ img {
   word-wrap: break-word;
   background-color: var(--bs-card-bg);
   background-clip: border-box;
-  border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+  border: 1px solid #fff;
+
   border-radius: var(--bs-card-border-radius);
   position: relative;
     width: 100%;
     min-height: 1px;
-   
+   cursor: pointer;
 }
 
 .card-body {
-  flex: 1 1 auto;
+  flex: 1 1 180px;
   padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);
   color: var(--bs-card-color);
 }
@@ -321,6 +350,10 @@ img {
   margin-bottom: 1.5rem!important;
 }
 
+.card a {
+  display:flex;
+  flex-direction: column;
+}
 
 
 
@@ -334,4 +367,39 @@ img {
   /* border-bottom: 10px; */
   border-bottom: 5px solid #fdfdfd;
   padding-bottom: 10px;
+}
+
+
+.card-text, h4{
+  color:#000
+}
+
+h4 {
+  text-transform: uppercase;
+}
+
+.tag-react {
+  color: rgb(13, 136, 236);
+}
+
+.tag-tail {
+  color: rgb(236, 13, 217);
+}
+
+.tag-spoty {
+  color: rgb(0, 202, 91);
+}
+
+.tag-axios {
+  color: rgb(202, 0, 0);
+}
+.tag-api {
+  color: rgb(166, 191, 201);
+}
+
+.tag-next {
+  color: rgb(38, 3, 121);
+}
+.card-body span {
+  font-size: 14px;
 }
